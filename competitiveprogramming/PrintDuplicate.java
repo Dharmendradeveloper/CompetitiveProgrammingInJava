@@ -14,29 +14,30 @@ public class PrintDuplicate {
         for (int i=0;i<ch.length;i++){
             for(int j=0;j<str.length();j++){
                 if(j==i){
-                    // Skip operation
+                    // Skip operation and count the character which has been appeared at least once 
                     flag++;
                 }else {
                     if(str.charAt(j) == ch[i]){
                         // duplicate alphabet
                         if(j<i){
-                            alreadyAvailAlphabet++;
+                            alreadyAvailAlphabet++;// Checking if the character has already been count then terminating the loop and proceeding at further character.
                             break;
                         }
                         flag++;
                     }else {
-                        // unique alphabet skip bcz of duplicate
+                        // Unique alphabet
+                        // Skip
                     }
                 }
             }//inner loop
             if(alreadyAvailAlphabet>=1){
-                alreadyAvailAlphabet=0;
+                alreadyAvailAlphabet=0;// To avoid the repetitive count of character
             }else {
-                if(flag >= 2) {
+                if(flag >= 2) {// If the character has appeared more than one then print that character with no.of times appear
                     System.out.println("character "+ch[i]+" "+flag);
                     flag = 0;
                 }else {
-                    flag = 0;
+                    flag = 0;//If the character has appeared only once then make the flag=0;
                 }
             }
         }//outer loop
