@@ -5,7 +5,8 @@ public class PrintDuplicate {
         printDuplicate();
     }
     private static void printDuplicate(){
-        String str = "rraama";
+        String str1 = "Dharmendra KDumar";
+        String str = str1.trim().toLowerCase();
         char[] ch = str.toCharArray();
         int alreadyAvailAlphabet = 0;
         int flag = 0;
@@ -13,7 +14,7 @@ public class PrintDuplicate {
         for (int i=0;i<ch.length;i++){
             for(int j=0;j<str.length();j++){
                 if(j==i){
-                    // Skip
+                    // Skip operation
                     flag++;
                 }else {
                     if(str.charAt(j) == ch[i]){
@@ -23,22 +24,58 @@ public class PrintDuplicate {
                             break;
                         }
                         flag++;
-//                        temp = temp+ch[i];
                     }else {
-                        // unique alphabet
+                        // unique alphabet skip bcz of duplicate
                     }
                 }
             }//inner loop
             if(alreadyAvailAlphabet>=1){
                 alreadyAvailAlphabet=0;
             }else {
-                if(flag>=2) {
+                if(flag >= 2) {
                     System.out.println("character "+ch[i]+" "+flag);
                     flag = 0;
                 }else {
-
+                    flag = 0;
                 }
             }
         }//outer loop
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
